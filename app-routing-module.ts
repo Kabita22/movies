@@ -1,12 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { MovieListComponent } from 'src/app/components/movie-list/movie-list.component';
-
-
+import { MoviesListComponent } from './component/movies-list/movies-list.component';
+import { LoginComponent } from './component/login/login.component';
+import { MoviesDetailsComponent } from './component/movies-details/movies-details.component';
 
 const appRoutes: Routes = [
-    { path: 'moviesList', component: MovieListComponent },
-    { path: '',  redirectTo: '/moviesList', pathMatch: 'full'}
+    { path: 'login', component: LoginComponent },
+    { path: '', redirectTo: '/login', pathMatch: 'full' },
+    { path: 'moviesList', component: MoviesListComponent },
+    { path: 'movieDetails/:movieName', component: MoviesDetailsComponent },    
 ];
 @NgModule({
     imports: [

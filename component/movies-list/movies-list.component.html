@@ -1,0 +1,19 @@
+Welcome {{user | firstAlphabetToUpper}}
+
+<select #location (change)="changeLocation(location.value)">
+    <option value="bangalore">bangalore</option>
+    <option value="mumbai">Mumbai</option>
+</select>
+<br/>
+<br/>
+
+<div *ngIf="filteredMovies.length > 0; else noMovie">
+  <div *ngFor="let movie of filteredMovies">
+    {{movie.name}}  {{movie.rating | recommended}}
+    <button (click)="movieDetails(movie.name)">Book</button>
+  </div>
+</div>
+
+<ng-template #noMovie>
+  No movies!!
+</ng-template>
